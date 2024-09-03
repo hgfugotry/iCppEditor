@@ -149,7 +149,7 @@ QString MainWindow::fileSaveAs()
 {
     QString file;
     while((file=QFileDialog::getSaveFileName(nullptr,"另存为",QDir::currentPath(),"C/C++源文件(*.c *.cpp *.cxx *.C *.cc *.hpp *h);;其他文件(*.*)")).isNull())
-        if(QMessageBox::warning(nullptr,"另存文件失败","是否重试？",QMessageBox::Yes|QMessageBox::No)==QMessageBox::No)
+        if(QMessageBox::warning(nullptr,"另存文件失败","是否重试？",QMessageBox::Yes|QMessageBox::Apply|QMessageBox::No)==QMessageBox::No)
             break;
     if(!file.isNull())
         fileSave(file);
