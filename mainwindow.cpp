@@ -59,6 +59,7 @@ MainWindow::ProjectDockWidget::ProjectDockWidget(QWidget* parent)
     dockWidgetContext->setLayout(vBoxLayout);
     treeProjectWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 }
+
 MainWindow::ProjectDockWidget::~ProjectDockWidget()
 {
     delete vBoxLayout;
@@ -78,7 +79,10 @@ void MainWindow::do_File_Open_triggered()
 //菜单保存槽，发射fileChanged
 void MainWindow::do_File_Save_triggered()
 {
-    fileSave(currentFilePath);
+    if(!currentFilePath.isNull())
+        fileSave(currentFilePath);
+    else
+        fileSaveAs();
 }
 
 //菜单另存为槽，发射fileChanged
