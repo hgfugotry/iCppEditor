@@ -2,6 +2,7 @@
 #include"ProjectRightMenu.hpp"
 #include"dialognewproject.h"
 #include"dialogchoosecolor.h"
+#include"dialogsethowtocompile.h"
 #include"mainwindow.h"
 #include"ui_mainwindow.h"
 
@@ -18,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionFileOpen_O,SIGNAL(triggered()),this,SLOT(do_File_Open_triggered()));//菜单栏->打开文件
     connect(ui->actionFileSave_S,SIGNAL(triggered()),this,SLOT(do_File_Save_triggered()));//菜单栏->保存文件
     connect(ui->actionFileSaveAs_A,SIGNAL(triggered()),this,SLOT(do_File_SaveAs_triggered()));//菜单栏->另存为文件
+    connect(ui->actionBuildSettings_S,SIGNAL(triggered()),this,SLOT(do_Build_Settings_triggered()));//菜单栏->配置编译选项
     connect(ui->actionNewProject_N,SIGNAL(triggered()),this,SLOT(do_Project_New_triggered()));//菜单栏->新建项目
     connect(ui->actionOpenProject_O,SIGNAL(triggered()),this,SLOT(do_Project_Open_triggered()));//菜单栏->打开项目
     connect(ui->actionSettingsFont_F,SIGNAL(triggered()),this,SLOT(do_SettingsSeries_triggered()));//菜单栏->设置字体
@@ -322,4 +324,11 @@ void MainWindow::do_projectRightMenu_deleteFileSeries_triggered()
         project->del(fileInfo.absoluteFilePath(),projectDockWidget.treeProjectWidget->currentItem()->type());
         emit projectChanged(currentProjectPath);
     }
+}
+
+void MainWindow::do_Build_Settings_triggered()
+{
+    DialogSetHowToCompile* dialogSetHowToCompile=new DialogSetHowToCompile(this);
+    dialogSetHowToCompile->exec();
+    delete dialogSetHowToCompile;
 }

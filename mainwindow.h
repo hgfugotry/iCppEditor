@@ -72,6 +72,8 @@ private slots:
     void do_File_Save_triggered();
     void do_File_SaveAs_triggered();
 
+    void do_Build_Settings_triggered();
+
     void do_Project_New_triggered();
     void do_Project_Open_triggered();
 

@@ -114,9 +114,9 @@ public:
         DialogNewProject->setWindowTitle(QCoreApplication::translate("DialogNewProject", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
         label_2->setText(QCoreApplication::translate("DialogNewProject", "\351\241\271\347\233\256\345\220\215\347\247\260\357\274\232", nullptr));
         label->setText(QCoreApplication::translate("DialogNewProject", "\350\267\257\345\276\204\357\274\232", nullptr));
-        browsePathButton->setText(QCoreApplication::translate("DialogNewProject", "\346\265\217\350\247\210...", nullptr));
-        commitButton->setText(QCoreApplication::translate("DialogNewProject", "\347\241\256\345\256\232", nullptr));
-        cancelButton->setText(QCoreApplication::translate("DialogNewProject", "\345\217\226\346\266\210", nullptr));
+        browsePathButton->setText(QCoreApplication::translate("DialogNewProject", "\346\265\217\350\247\210...(&B)", nullptr));
+        commitButton->setText(QCoreApplication::translate("DialogNewProject", "\347\241\256\345\256\232(&O)", nullptr));
+        cancelButton->setText(QCoreApplication::translate("DialogNewProject", "\345\217\226\346\266\210(&C)", nullptr));
     } // retranslateUi
 
 };

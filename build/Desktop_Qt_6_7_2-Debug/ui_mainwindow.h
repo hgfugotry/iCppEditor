@@ -30,7 +30,7 @@ public:
     QAction *actionFileSave_S;
     QAction *actionFileSaveAs_A;
     QAction *actionBuildCompile_C;
-    QAction *actionBuildSet_S;
+    QAction *actionBuildSettings_S;
     QAction *actionNewProject_N;
     QAction *action_H;
     QAction *action_C;
@@ -66,8 +66,8 @@ public:
         actionFileSaveAs_A->setObjectName("actionFileSaveAs_A");
         actionBuildCompile_C = new QAction(MainWindow);
         actionBuildCompile_C->setObjectName("actionBuildCompile_C");
-        actionBuildSet_S = new QAction(MainWindow);
-        actionBuildSet_S->setObjectName("actionBuildSet_S");
+        actionBuildSettings_S = new QAction(MainWindow);
+        actionBuildSettings_S->setObjectName("actionBuildSettings_S");
         actionNewProject_N = new QAction(MainWindow);
         actionNewProject_N->setObjectName("actionNewProject_N");
         action_H = new QAction(MainWindow);
@@ -136,7 +136,7 @@ public:
         menuFile_F->addAction(actionFileSave_S);
         menuFile_F->addAction(actionFileSaveAs_A);
         menuBuild_B->addAction(actionBuildCompile_C);
-        menuBuild_B->addAction(actionBuildSet_S);
+        menuBuild_B->addAction(actionBuildSettings_S);
         menuProject_P->addAction(actionNewProject_N);
         menuProject_P->addAction(actionOpenProject_O);
         menuProject_P->addSeparator();
@@ -167,9 +167,9 @@ public:
 #if QT_CONFIG(shortcut)
         actionBuildCompile_C->setShortcut(QCoreApplication::translate("MainWindow", "F5", nullptr));
 #endif // QT_CONFIG(shortcut)
-        actionBuildSet_S->setText(QCoreApplication::translate("MainWindow", "\351\205\215\347\275\256\347\274\226\350\257\221\351\200\211\351\241\271(&S)", nullptr));
+        actionBuildSettings_S->setText(QCoreApplication::translate("MainWindow", "\351\205\215\347\275\256\347\274\226\350\257\221\351\200\211\351\241\271(&S)", nullptr));
 #if QT_CONFIG(shortcut)
-        actionBuildSet_S->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Alt+S", nullptr));
+        actionBuildSettings_S->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Alt+S", nullptr));
 #endif // QT_CONFIG(shortcut)
         actionNewProject_N->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\351\241\271\347\233\256(&N)", nullptr));
 #if QT_CONFIG(shortcut)

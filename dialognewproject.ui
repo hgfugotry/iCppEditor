@@ -41,7 +41,7 @@
        <item>
         <widget class="QPushButton" name="browsePathButton">
          <property name="text">
-          <string>浏览...</string>
+          <string>浏览...(&amp;B)</string>
          </property>
         </widget>
        </item>
@@ -80,14 +80,14 @@
      <item>
       <widget class="QPushButton" name="commitButton">
        <property name="text">
-        <string>确定</string>
+        <string>确定(&amp;O)</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="cancelButton">
        <property name="text">
-        <string>取消</string>
+        <string>取消(&amp;C)</string>
        </property>
       </widget>
      </item>

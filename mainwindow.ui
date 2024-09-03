@@ -78,7 +78,7 @@ color:rgb(255,255,255);</string>
      <string>构建(&amp;B)</string>
     </property>
     <addaction name="actionBuildCompile_C"/>
-    <addaction name="actionBuildSet_S"/>
+    <addaction name="actionBuildSettings_S"/>
    </widget>
    <widget class="QMenu" name="menuProject_P">
     <property name="title">
@@ -133,7 +133,7 @@ color:rgb(255,255,255);</string>
     <string>F5</string>
    </property>
   </action>
-  <action name="actionBuildSet_S">
+  <action name="actionBuildSettings_S">
    <property name="text">
     <string>配置编译选项(&amp;S)</string>
    </property>

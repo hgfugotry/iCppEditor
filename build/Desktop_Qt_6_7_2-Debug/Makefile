@@ -55,16 +55,19 @@ OBJECTS_DIR   = ./
 SOURCES       = ../../ProjectRightMenu.cpp \
 		../../dialogchoosecolor.cpp \
 		../../dialognewproject.cpp \
+		../../dialogsethowtocompile.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp \
 		../../project.cpp qrc_qmake_qmake_qm_files.cpp \
 		moc_ProjectRightMenu.cpp \
 		moc_dialogchoosecolor.cpp \
 		moc_dialognewproject.cpp \
+		moc_dialogsethowtocompile.cpp \
 		moc_mainwindow.cpp
 OBJECTS       = ProjectRightMenu.o \
 		dialogchoosecolor.o \
 		dialognewproject.o \
+		dialogsethowtocompile.o \
 		main.o \
 		mainwindow.o \
 		project.o \
@@ -72,6 +75,7 @@ OBJECTS       = ProjectRightMenu.o \
 		moc_ProjectRightMenu.o \
 		moc_dialogchoosecolor.o \
 		moc_dialognewproject.o \
+		moc_dialogsethowtocompile.o \
 		moc_mainwindow.o
 DIST          = /home/lly/Qt/6.7.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/lly/Qt/6.7.2/gcc_64/mkspecs/common/unix.conf \
@@ -421,10 +425,12 @@ DIST          = /home/lly/Qt/6.7.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../myEditor.pro ../../ProjectRightMenu.hpp \
 		../../dialogchoosecolor.h \
 		../../dialognewproject.h \
+		../../dialogsethowtocompile.h \
 		../../mainwindow.h \
 		../../project.h ../../ProjectRightMenu.cpp \
 		../../dialogchoosecolor.cpp \
 		../../dialognewproject.cpp \
+		../../dialogsethowtocompile.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp \
 		../../project.cpp
@@ -436,7 +442,7 @@ TARGET        = myEditor
 first: all
 ####### Build rules
 
-myEditor: ui_dialogchoosecolor.h ui_dialognewproject.h ui_mainwindow.h $(OBJECTS)  
+myEditor: ui_dialogchoosecolor.h ui_dialognewproject.h ui_dialogsethowtocompile.h ui_mainwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../../myEditor.pro /home/lly/Qt/6.7.2/gcc_64/mkspecs/linux-g++/qmake.conf /home/lly/Qt/6.7.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -1159,9 +1165,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../../myEditor_zh_CN.ts $(DISTDIR)/
 	$(COPY_FILE) --parents qmake_qmake_qm_files.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/lly/Qt/6.7.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../ProjectRightMenu.hpp ../../dialogchoosecolor.h ../../dialognewproject.h ../../mainwindow.h ../../project.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../ProjectRightMenu.cpp ../../dialogchoosecolor.cpp ../../dialognewproject.cpp ../../main.cpp ../../mainwindow.cpp ../../project.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../dialogchoosecolor.ui ../../dialognewproject.ui ../../mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../../ProjectRightMenu.hpp ../../dialogchoosecolor.h ../../dialognewproject.h ../../dialogsethowtocompile.h ../../mainwindow.h ../../project.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../ProjectRightMenu.cpp ../../dialogchoosecolor.cpp ../../dialognewproject.cpp ../../dialogsethowtocompile.cpp ../../main.cpp ../../mainwindow.cpp ../../project.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../dialogchoosecolor.ui ../../dialognewproject.ui ../../dialogsethowtocompile.ui ../../mainwindow.ui $(DISTDIR)/
 	$(COPY_FILE) --parents ../../myEditor_zh_CN.ts $(DISTDIR)/
 
 
@@ -1206,9 +1212,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/lly/Qt/6.7.2/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -fPIC -dM -E -o moc_predefs.h /home/lly/Qt/6.7.2/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_ProjectRightMenu.cpp moc_dialogchoosecolor.cpp moc_dialognewproject.cpp moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_ProjectRightMenu.cpp moc_dialogchoosecolor.cpp moc_dialognewproject.cpp moc_dialogsethowtocompile.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_ProjectRightMenu.cpp moc_dialogchoosecolor.cpp moc_dialognewproject.cpp moc_mainwindow.cpp
+	-$(DEL_FILE) moc_ProjectRightMenu.cpp moc_dialogchoosecolor.cpp moc_dialognewproject.cpp moc_dialogsethowtocompile.cpp moc_mainwindow.cpp
 moc_ProjectRightMenu.cpp: ../../ProjectRightMenu.hpp \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QMenu \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qmenu.h \
@@ -1783,6 +1789,197 @@ moc_dialognewproject.cpp: ../../dialognewproject.h \
 		/home/lly/Qt/6.7.2/gcc_64/libexec/moc
 	/home/lly/Qt/6.7.2/gcc_64/libexec/moc $(DEFINES) --include /home/lly/Documents/Code/Qt/myEditor/build/Desktop_Qt_6_7_2-Debug/moc_predefs.h -I/home/lly/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -I/home/lly/Documents/Code/Qt/myEditor -I/home/lly/Qt/6.7.2/gcc_64/include -I/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets -I/home/lly/Qt/6.7.2/gcc_64/include/QtGui -I/home/lly/Qt/6.7.2/gcc_64/include/QtSql -I/home/lly/Qt/6.7.2/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../dialognewproject.h -o moc_dialognewproject.cpp
 
+moc_dialogsethowtocompile.cpp: ../../dialogsethowtocompile.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QDialog \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qdialog.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qglobal.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtversionchecks.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtconfiginclude.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qconfig.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtconfigmacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtcoreexports.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtdeprecationmarkers.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtpreprocessorsupport.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qassert.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtnoop.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtypes.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtversion.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtclasshelpermacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlogging.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qflags.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcompare_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qatomic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qyieldcpu.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qconstructormacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdarwinhelpers.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qexceptionhandling.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qforeach.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qttypetraits.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfunctionpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmalloc.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qminmax.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qoverload.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qswap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtenvironmentvariables.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtresource.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qttranslation.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtguiexports.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtwidgetsexports.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobject.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstring.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qchar.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qpair.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qxptype_traits.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q20functional.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q20memory.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringfwd.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q20type_traits.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlatin1stringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringconverter_base.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlist.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiterator.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcompare.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcomparehelpers.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmath.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiterable.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbindingstorage.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmargins.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q23utility.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qaction.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qicon.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsize.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qrect.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qpoint.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qcolor.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrgb.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qimage.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtransform.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qregion.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qline.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qvariant.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdebug.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qset.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qhash.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpalette.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qbrush.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfont.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qendian.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qcursor.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qevent.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qurl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qscreen.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QList \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QObject \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QRect \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QSize \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QSizeF \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/QTransform \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qnativeinterface.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qscreen_platform.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfuture.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmutex.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtsan_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qthread.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qexception.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qpromise.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlocale.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
+		moc_predefs.h \
+		/home/lly/Qt/6.7.2/gcc_64/libexec/moc
+	/home/lly/Qt/6.7.2/gcc_64/libexec/moc $(DEFINES) --include /home/lly/Documents/Code/Qt/myEditor/build/Desktop_Qt_6_7_2-Debug/moc_predefs.h -I/home/lly/Qt/6.7.2/gcc_64/mkspecs/linux-g++ -I/home/lly/Documents/Code/Qt/myEditor -I/home/lly/Qt/6.7.2/gcc_64/include -I/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets -I/home/lly/Qt/6.7.2/gcc_64/include/QtGui -I/home/lly/Qt/6.7.2/gcc_64/include/QtSql -I/home/lly/Qt/6.7.2/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../dialogsethowtocompile.h -o moc_dialogsethowtocompile.cpp
+
 moc_mainwindow.cpp: ../../mainwindow.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -2049,9 +2246,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_dialogchoosecolor.h ui_dialognewproject.h ui_mainwindow.h
+compiler_uic_make_all: ui_dialogchoosecolor.h ui_dialognewproject.h ui_dialogsethowtocompile.h ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_dialogchoosecolor.h ui_dialognewproject.h ui_mainwindow.h
+	-$(DEL_FILE) ui_dialogchoosecolor.h ui_dialognewproject.h ui_dialogsethowtocompile.h ui_mainwindow.h
 ui_dialogchoosecolor.h: ../../dialogchoosecolor.ui \
 		/home/lly/Qt/6.7.2/gcc_64/libexec/uic
 	/home/lly/Qt/6.7.2/gcc_64/libexec/uic ../../dialogchoosecolor.ui -o ui_dialogchoosecolor.h
@@ -2059,6 +2256,10 @@ ui_dialogchoosecolor.h: ../../dialogchoosecolor.ui \
 ui_dialognewproject.h: ../../dialognewproject.ui \
 		/home/lly/Qt/6.7.2/gcc_64/libexec/uic
 	/home/lly/Qt/6.7.2/gcc_64/libexec/uic ../../dialognewproject.ui -o ui_dialognewproject.h
+
+ui_dialogsethowtocompile.h: ../../dialogsethowtocompile.ui \
+		/home/lly/Qt/6.7.2/gcc_64/libexec/uic
+	/home/lly/Qt/6.7.2/gcc_64/libexec/uic ../../dialogsethowtocompile.ui -o ui_dialogsethowtocompile.h
 
 ui_mainwindow.h: ../../mainwindow.ui \
 		/home/lly/Qt/6.7.2/gcc_64/libexec/uic
@@ -2470,7 +2671,32 @@ dialogchoosecolor.o: ../../dialogchoosecolor.cpp ../../dialogchoosecolor.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qinputmethod.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlocale.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
-		ui_dialogchoosecolor.h
+		ui_dialogchoosecolor.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QVariant \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qformlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QLayout \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qspinbox.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialogchoosecolor.o ../../dialogchoosecolor.cpp
 
 dialognewproject.o: ../../dialognewproject.cpp ../../dialognewproject.h \
@@ -2696,6 +2922,196 @@ dialognewproject.o: ../../dialognewproject.cpp ../../dialognewproject.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcalendar.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtimezone.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialognewproject.o ../../dialognewproject.cpp
+
+dialogsethowtocompile.o: ../../dialogsethowtocompile.cpp ../../dialogsethowtocompile.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QDialog \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qdialog.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qglobal.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtversionchecks.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtconfiginclude.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qconfig.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtconfigmacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtcoreexports.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtdeprecationmarkers.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtpreprocessorsupport.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qassert.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtnoop.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtypes.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtversion.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtclasshelpermacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlogging.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qflags.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcompare_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qatomic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qyieldcpu.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qconstructormacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdarwinhelpers.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qexceptionhandling.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qforeach.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qttypetraits.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfunctionpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmalloc.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qminmax.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qoverload.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qswap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtenvironmentvariables.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtresource.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qttranslation.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtguiexports.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtwidgetsexports.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobject.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstring.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qchar.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qpair.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qxptype_traits.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q20functional.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q20memory.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringfwd.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q20type_traits.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlatin1stringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringconverter_base.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlist.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiterator.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcompare.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcomparehelpers.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmath.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiterable.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qbindingstorage.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmargins.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/q23utility.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qaction.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qicon.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsize.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qrect.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qpoint.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qcolor.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrgb.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qimage.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtransform.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qregion.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qline.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qvariant.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdebug.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qset.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qhash.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpalette.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qbrush.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfont.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qendian.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qcursor.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qevent.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qurl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qscreen.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QList \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QObject \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QRect \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QSize \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QSizeF \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/QTransform \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qnativeinterface.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qscreen_platform.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qcoreapplication_platform.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfuture.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qmutex.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qtsan_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qthread.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qexception.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qpromise.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlocale.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
+		ui_dialogsethowtocompile.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialogsethowtocompile.o ../../dialogsethowtocompile.cpp
 
 main.o: ../../main.cpp ../../mainwindow.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -3382,6 +3798,9 @@ moc_dialogchoosecolor.o: moc_dialogchoosecolor.cpp
 
 moc_dialognewproject.o: moc_dialognewproject.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dialognewproject.o moc_dialognewproject.cpp
+
+moc_dialogsethowtocompile.o: moc_dialogsethowtocompile.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dialogsethowtocompile.o moc_dialogsethowtocompile.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

@@ -34,8 +34,8 @@ public:
     QSpinBox *bspinBox;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
-    QPushButton *cancelButton;
     QPushButton *commitButton;
+    QPushButton *cancelButton;
 
     void setupUi(QDialog *DialogChooseColor)
     {
@@ -92,15 +92,15 @@ public:
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        cancelButton = new QPushButton(widget);
-        cancelButton->setObjectName("cancelButton");
-
-        horizontalLayout->addWidget(cancelButton);
-
         commitButton = new QPushButton(widget);
         commitButton->setObjectName("commitButton");
 
         horizontalLayout->addWidget(commitButton);
+
+        cancelButton = new QPushButton(widget);
+        cancelButton->setObjectName("cancelButton");
+
+        horizontalLayout->addWidget(cancelButton);
 
 
         retranslateUi(DialogChooseColor);
@@ -110,12 +110,12 @@ public:
 
     void retranslateUi(QDialog *DialogChooseColor)
     {
-        DialogChooseColor->setWindowTitle(QCoreApplication::translate("DialogChooseColor", "\347\273\231\344\275\240\347\202\271\351\242\234\350\211\262", nullptr));
+        DialogChooseColor->setWindowTitle(QCoreApplication::translate("DialogChooseColor", "\351\242\234\350\211\262", nullptr));
         rlabel->setText(QCoreApplication::translate("DialogChooseColor", "R", nullptr));
         glabel->setText(QCoreApplication::translate("DialogChooseColor", "G", nullptr));
         blabel->setText(QCoreApplication::translate("DialogChooseColor", "B", nullptr));
-        cancelButton->setText(QCoreApplication::translate("DialogChooseColor", "\345\217\226\346\266\210(&C)", nullptr));
         commitButton->setText(QCoreApplication::translate("DialogChooseColor", "\347\241\256\345\256\232(&O)", nullptr));
+        cancelButton->setText(QCoreApplication::translate("DialogChooseColor", "\345\217\226\346\266\210(&C)", nullptr));
     } // retranslateUi
 
 };
