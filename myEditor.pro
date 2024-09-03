@@ -12,6 +12,7 @@ SOURCES += \
     ProjectRightMenu.cpp \
     dialogchoosecolor.cpp \
     dialognewproject.cpp \
+    dialogsethowtocompile.cpp \
     main.cpp \
     mainwindow.cpp \
     project.cpp
@@ -20,12 +21,14 @@ HEADERS += \
     ProjectRightMenu.hpp \
     dialogchoosecolor.h \
     dialognewproject.h \
+    dialogsethowtocompile.h \
     mainwindow.h \
     project.h
 
 FORMS += \
     dialogchoosecolor.ui \
     dialognewproject.ui \
+    dialogsethowtocompile.ui \
     mainwindow.ui
 
 TRANSLATIONS += \
