@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     ProjectRightMenu.cpp \
+    dialogchoosecolor.cpp \
     dialognewproject.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,11 +18,13 @@ SOURCES += \
 
 HEADERS += \
     ProjectRightMenu.hpp \
+    dialogchoosecolor.h \
     dialognewproject.h \
     mainwindow.h \
     project.h
 
 FORMS += \
+    dialogchoosecolor.ui \
     dialognewproject.ui \
     mainwindow.ui
 

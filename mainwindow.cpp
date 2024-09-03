@@ -1,6 +1,7 @@
 #include<iostream>
 #include"ProjectRightMenu.hpp"
 #include"dialognewproject.h"
+#include"dialogchoosecolor.h"
 #include"mainwindow.h"
 #include"ui_mainwindow.h"
 
@@ -46,6 +47,7 @@ MainWindow::~MainWindow()
 
 MainWindow::ProjectDockWidget::ProjectDockWidget(QWidget* parent)
 {
+    //设置项目停靠区域
     dockWidget=new QDockWidget(parent);
     dockWidgetContext=new QWidget;
     treeProjectWidget=new QTreeWidget(dockWidgetContext);
@@ -53,7 +55,7 @@ MainWindow::ProjectDockWidget::ProjectDockWidget(QWidget* parent)
     vBoxLayout->addWidget(treeProjectWidget);
     dockWidget->setFeatures(QDockWidget::DockWidgetFeatures(0x6));
     dockWidget->setAllowedAreas(Qt::DockWidgetArea::AllDockWidgetAreas);
-    treeProjectWidget->setStyleSheet("background:rgb(255,0,127);");
+    treeProjectWidget->setStyleSheet("background:rgb(255,245,255);");
     dockWidget->setWindowTitle("项目");
     dockWidget->setWidget(dockWidgetContext);
     dockWidgetContext->setLayout(vBoxLayout);
@@ -286,7 +288,21 @@ void MainWindow::do_SettingsSeries_triggered()
     }
     else if(sender()==ui->actionSettingsColor_C)
     {
+        DialogChooseColor* dialogChooseColor=new DialogChooseColor(this);
+        if(dialogChooseColor->exec()==QDialog::Accepted)
+        {
+            //背景颜色
+            char style[128];
+            DialogChooseColor::RGB rgb=dialogChooseColor->inputMessage();
+            sprintf(style,"background:rgb(%d,%d,%d);",rgb.r,rgb.g,rgb.b);
 
+            //文字颜色
+            if(rgb.r+rgb.g+rgb.b>300)strcat(style,"color:rgb(0,0,0);");
+            else strcat(style,"color:rgb(255,255,255);");
+
+            ui->plainTextEdit->setStyleSheet(style);
+        }
+        delete dialogChooseColor;
     }
 }
 
