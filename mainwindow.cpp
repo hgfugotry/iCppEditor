@@ -138,7 +138,6 @@ void MainWindow::addProjectFile(int mode)
 
 void MainWindow::do_fileChanged(QString newFilePath)
 {
-    std::cout<<"fileChanged"<<std::endl;
     if(currentFilePath.isNull()&&(!ui->plainTextEdit->toPlainText().isNull()))
         fileSaveAs();
     else
