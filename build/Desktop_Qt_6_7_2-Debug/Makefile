@@ -2225,6 +2225,18 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QDir \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QFileInfo \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/QPalette \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPlainTextEdit \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qglyphrun.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrawfont.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontdatabase.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../project.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/QSqlDatabase \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/qsqldatabase.h \
@@ -2671,32 +2683,7 @@ dialogchoosecolor.o: ../../dialogchoosecolor.cpp ../../dialogchoosecolor.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qinputmethod.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qlocale.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
-		ui_dialogchoosecolor.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QVariant \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QFormLayout \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qformlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QLayout \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qboxlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qgridlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPushButton \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qpushbutton.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QSpinBox \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qspinbox.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qvalidator.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qregularexpression.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QWidget
+		ui_dialogchoosecolor.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialogchoosecolor.o ../../dialogchoosecolor.cpp
 
 dialognewproject.o: ../../dialognewproject.cpp ../../dialognewproject.h \
@@ -2888,30 +2875,6 @@ dialognewproject.o: ../../dialognewproject.cpp ../../dialognewproject.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qguiapplication_platform.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QString \
 		ui_dialognewproject.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QVariant \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qboxlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qgridlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QLabel \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlabel.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qframe.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpicture.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextdocument.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QLineEdit \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qlineedit.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextcursor.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextformat.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qpen.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextoption.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPushButton \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qpushbutton.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QSpacerItem \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QFileDialog \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qfiledialog.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/qdir.h \
@@ -3358,6 +3321,18 @@ main.o: ../../main.cpp ../../mainwindow.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QDir \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QFileInfo \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/QPalette \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPlainTextEdit \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qglyphrun.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrawfont.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontdatabase.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../project.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/QSqlDatabase \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/qsqldatabase.h \
@@ -3570,6 +3545,7 @@ mainwindow.o: ../../mainwindow.cpp ../../ProjectRightMenu.hpp \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QString \
 		../../dialogchoosecolor.h \
+		../../dialogsethowtocompile.h \
 		../../mainwindow.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -3629,6 +3605,18 @@ mainwindow.o: ../../mainwindow.cpp ../../ProjectRightMenu.hpp \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QDir \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QFileInfo \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/QPalette \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPlainTextEdit \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qplaintextedit.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextlayout.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qglyphrun.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrawfont.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontdatabase.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../project.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/QSqlDatabase \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/qsqldatabase.h \
@@ -3639,27 +3627,7 @@ mainwindow.o: ../../mainwindow.cpp ../../ProjectRightMenu.hpp \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/qsqlquery.h \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/QSqlRecord \
 		/home/lly/Qt/6.7.2/gcc_64/include/QtSql/qsqlrecord.h \
-		ui_mainwindow.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtCore/QVariant \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/QAction \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QApplication \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qapplication.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QGroupBox \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qgroupbox.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QHBoxLayout \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QMenuBar \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qmenubar.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QPlainTextEdit \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qplaintextedit.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qtextedit.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qtextlayout.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qglyphrun.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qrawfont.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtGui/qfontdatabase.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QStatusBar \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/qstatusbar.h \
-		/home/lly/Qt/6.7.2/gcc_64/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../mainwindow.cpp
 
 project.o: ../../project.cpp ../../project.h \

@@ -12,13 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -41,22 +38,19 @@ public:
     QAction *actionSettingsFont_F;
     QAction *actionSettingsColor_C;
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_2;
-    QGroupBox *fileNameGroupBox;
     QHBoxLayout *horizontalLayout_3;
-    QPlainTextEdit *plainTextEdit;
+    QHBoxLayout *mainWindowLayout;
     QMenuBar *menubar;
     QMenu *menuFile_F;
     QMenu *menuBuild_B;
     QMenu *menuProject_P;
     QMenu *menuSettings_S;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(881, 534);
+        MainWindow->resize(724, 378);
         MainWindow->setStyleSheet(QString::fromUtf8(""));
         actionFileOpen_O = new QAction(MainWindow);
         actionFileOpen_O->setObjectName("actionFileOpen_O");
@@ -88,33 +82,17 @@ public:
         actionSettingsColor_C->setObjectName("actionSettingsColor_C");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_2 = new QHBoxLayout(centralwidget);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        fileNameGroupBox = new QGroupBox(centralwidget);
-        fileNameGroupBox->setObjectName("fileNameGroupBox");
-        fileNameGroupBox->setStyleSheet(QString::fromUtf8("background:rgb(245,225,245);"));
-        horizontalLayout_3 = new QHBoxLayout(fileNameGroupBox);
+        horizontalLayout_3 = new QHBoxLayout(centralwidget);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        plainTextEdit = new QPlainTextEdit(fileNameGroupBox);
-        plainTextEdit->setObjectName("plainTextEdit");
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Noto Sans Hatran")});
-        font.setPointSize(13);
-        font.setBold(true);
-        plainTextEdit->setFont(font);
-        plainTextEdit->setStyleSheet(QString::fromUtf8("background:rgb(13, 13, 6);\n"
-"color:rgb(255,255,255);"));
-        plainTextEdit->setLineWrapMode(QPlainTextEdit::LineWrapMode::NoWrap);
+        mainWindowLayout = new QHBoxLayout();
+        mainWindowLayout->setObjectName("mainWindowLayout");
 
-        horizontalLayout_3->addWidget(plainTextEdit);
-
-
-        horizontalLayout_2->addWidget(fileNameGroupBox);
+        horizontalLayout_3->addLayout(mainWindowLayout);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 881, 27));
+        menubar->setGeometry(QRect(0, 0, 724, 27));
         menuFile_F = new QMenu(menubar);
         menuFile_F->setObjectName("menuFile_F");
         menuBuild_B = new QMenu(menubar);
@@ -124,9 +102,6 @@ public:
         menuSettings_S = new QMenu(menubar);
         menuSettings_S->setObjectName("menuSettings_S");
         MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName("statusbar");
-        MainWindow->setStatusBar(statusbar);
 
         menubar->addAction(menuFile_F->menuAction());
         menubar->addAction(menuBuild_B->menuAction());
@@ -186,11 +161,6 @@ public:
         actionAddProjectFile_A->setText(QCoreApplication::translate("MainWindow", "\346\267\273\345\212\240(&A)", nullptr));
         actionSettingsFont_F->setText(QCoreApplication::translate("MainWindow", "\345\255\227\344\275\223(&F)", nullptr));
         actionSettingsColor_C->setText(QCoreApplication::translate("MainWindow", "\351\242\234\350\211\262(&C)", nullptr));
-        fileNameGroupBox->setTitle(QCoreApplication::translate("MainWindow", "File Name", nullptr));
-        plainTextEdit->setPlainText(QCoreApplication::translate("MainWindow", "\347\244\276\344\274\232\344\270\273\344\271\211\346\240\270\345\277\203\344\273\267\345\200\274\350\247\202\357\274\232\n"
-"\345\257\214\345\274\272 \346\260\221\344\270\273 \346\226\207\346\230\216 \345\222\214\350\260\220\n"
-"\350\207\252\347\224\261 \345\271\263\347\255\211 \345\205\254\346\255\243 \346\263\225\346\262\273\n"
-"\347\210\261\345\233\275 \346\225\254\344\270\232 \350\257\232\344\277\241 \345\217\213\345\226\204", nullptr));
         menuFile_F->setTitle(QCoreApplication::translate("MainWindow", "\346\226\207\344\273\266(&F)", nullptr));
         menuBuild_B->setTitle(QCoreApplication::translate("MainWindow", "\346\236\204\345\273\272(&B)", nullptr));
         menuProject_P->setTitle(QCoreApplication::translate("MainWindow", "\351\241\271\347\233\256(&P)", nullptr));

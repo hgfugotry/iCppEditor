@@ -29,11 +29,11 @@ public:
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label;
+    QComboBox *CompilerComboBox;
     QLabel *Label;
     QComboBox *optimizeChoiceComboBox;
     QLabel *Label_2;
     QLineEdit *outputLineEdit;
-    QComboBox *CompilerComboBox;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *commitButton;
@@ -43,9 +43,7 @@ public:
     {
         if (DialogSetHowToCompile->objectName().isEmpty())
             DialogSetHowToCompile->setObjectName("DialogSetHowToCompile");
-        DialogSetHowToCompile->resize(527, 148);
-        DialogSetHowToCompile->setMinimumSize(QSize(527, 148));
-        DialogSetHowToCompile->setMaximumSize(QSize(527, 148));
+        DialogSetHowToCompile->resize(639, 148);
         verticalLayout = new QVBoxLayout(DialogSetHowToCompile);
         verticalLayout->setObjectName("verticalLayout");
         formLayout = new QFormLayout();
@@ -54,6 +52,13 @@ public:
         label->setObjectName("label");
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label);
+
+        CompilerComboBox = new QComboBox(DialogSetHowToCompile);
+        CompilerComboBox->addItem(QString());
+        CompilerComboBox->addItem(QString());
+        CompilerComboBox->setObjectName("CompilerComboBox");
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, CompilerComboBox);
 
         Label = new QLabel(DialogSetHowToCompile);
         Label->setObjectName("Label");
@@ -79,13 +84,6 @@ public:
         outputLineEdit->setObjectName("outputLineEdit");
 
         formLayout->setWidget(2, QFormLayout::FieldRole, outputLineEdit);
-
-        CompilerComboBox = new QComboBox(DialogSetHowToCompile);
-        CompilerComboBox->addItem(QString());
-        CompilerComboBox->addItem(QString());
-        CompilerComboBox->setObjectName("CompilerComboBox");
-
-        formLayout->setWidget(0, QFormLayout::FieldRole, CompilerComboBox);
 
 
         verticalLayout->addLayout(formLayout);
@@ -119,6 +117,9 @@ public:
     {
         DialogSetHowToCompile->setWindowTitle(QCoreApplication::translate("DialogSetHowToCompile", "\351\205\215\347\275\256\347\274\226\350\257\221\351\200\211\351\241\271", nullptr));
         label->setText(QCoreApplication::translate("DialogSetHowToCompile", "\347\274\226\350\257\221\345\231\250", nullptr));
+        CompilerComboBox->setItemText(0, QCoreApplication::translate("DialogSetHowToCompile", "g++", nullptr));
+        CompilerComboBox->setItemText(1, QCoreApplication::translate("DialogSetHowToCompile", "gcc", nullptr));
+
         Label->setText(QCoreApplication::translate("DialogSetHowToCompile", "\344\274\230\345\214\226\351\200\211\351\241\271", nullptr));
         optimizeChoiceComboBox->setItemText(0, QCoreApplication::translate("DialogSetHowToCompile", "O0(Debug)", nullptr));
         optimizeChoiceComboBox->setItemText(1, QCoreApplication::translate("DialogSetHowToCompile", "Og", nullptr));
@@ -128,9 +129,6 @@ public:
 
         Label_2->setText(QCoreApplication::translate("DialogSetHowToCompile", "\350\276\223\345\207\272", nullptr));
         outputLineEdit->setText(QCoreApplication::translate("DialogSetHowToCompile", "a.out", nullptr));
-        CompilerComboBox->setItemText(0, QCoreApplication::translate("DialogSetHowToCompile", "g++", nullptr));
-        CompilerComboBox->setItemText(1, QCoreApplication::translate("DialogSetHowToCompile", "gcc", nullptr));
-
         commitButton->setText(QCoreApplication::translate("DialogSetHowToCompile", "\347\241\256\345\256\232(&O)", nullptr));
         cancelButton->setText(QCoreApplication::translate("DialogSetHowToCompile", "\345\217\226\346\266\210(&C)", nullptr));
     } // retranslateUi
